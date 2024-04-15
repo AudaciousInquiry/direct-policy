@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>direct-policy</artifactId>    
     <name>Direct Project policy enablement engine</name>
-    <version>6.0</version>
+    <version>6.0.0.1</version>
     <description>Direct Project policy enablement engine</description>
     <inceptionYear>2010</inceptionYear>
     <url>http://api.nhindirect.org/x/www/api.nhindirect.org/java/site/direct-policy/${project.version}</url> 
@@ -32,7 +32,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-dependencies</artifactId>
-    <version>2.1.2.RELEASE</version>
+    <version>2.7.18</version>
   </parent>  
   <licenses>
      <license>
@@ -95,7 +95,12 @@
           <groupId>org.mockito</groupId>
           <artifactId>mockito-core</artifactId>
           <scope>test</scope>
-        </dependency>			    			   																																																																																												
+        </dependency>
+	  <dependency>
+		  <groupId>org.junit.vintage</groupId>
+		  <artifactId>junit-vintage-engine</artifactId>
+		  <scope>test</scope>
+	  </dependency>
   </dependencies>      
   <build>
   	<extensions>
@@ -263,33 +268,33 @@
                </dependency>
 		</dependencies>
 	 </plugin>      
-     <plugin>
-      	<groupId>org.apache.maven.plugins</groupId> 
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.6.1</version>
-        <configuration>
-		    <additionalparam>-Xdoclint:none</additionalparam>
-			<charset>UTF-8</charset>
-			<docencoding>UTF-8</docencoding>
-			<docfilessubdirs>true</docfilessubdirs>
-			<detectJavaApiLink>true</detectJavaApiLink>
-			<detectLinks>true</detectLinks>
-			<source>1.8</source>
-			<show>public</show> 
-            <excludePackageNames>
-               org.nhindirect.policy.tools
-            </excludePackageNames>    			           	          
-	    </configuration>
-	    <executions>
-              <execution>
-	              <phase>package</phase>
-	              <id>attach-javadocs</id>
-	              <goals>
-	                <goal>jar</goal>
-	              </goals>
-	          </execution>
-	    </executions>	  	        
-	 </plugin>    
+<!--     <plugin>-->
+<!--      	<groupId>org.apache.maven.plugins</groupId> -->
+<!--        <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--        <version>2.6.1</version>-->
+<!--        <configuration>-->
+<!--		    <additionalparam>-Xdoclint:none</additionalparam>-->
+<!--			<charset>UTF-8</charset>-->
+<!--			<docencoding>UTF-8</docencoding>-->
+<!--			<docfilessubdirs>true</docfilessubdirs>-->
+<!--			<detectJavaApiLink>true</detectJavaApiLink>-->
+<!--			<detectLinks>true</detectLinks>-->
+<!--			<source>1.8</source>-->
+<!--			<show>public</show> -->
+<!--            <excludePackageNames>-->
+<!--               org.nhindirect.policy.tools-->
+<!--            </excludePackageNames>    			           	          -->
+<!--	    </configuration>-->
+<!--	    <executions>-->
+<!--              <execution>-->
+<!--	              <phase>package</phase>-->
+<!--	              <id>attach-javadocs</id>-->
+<!--	              <goals>-->
+<!--	                <goal>jar</goal>-->
+<!--	              </goals>-->
+<!--	          </execution>-->
+<!--	    </executions>	  	        -->
+<!--	 </plugin>    -->
 	     <plugin>
              <groupId>org.apache.maven.plugins</groupId>
              <artifactId>maven-gpg-plugin</artifactId>
